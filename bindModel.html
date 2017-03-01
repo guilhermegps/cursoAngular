@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html ng-app ng-init="valor1 = 'Guilherme de Paiva'; valor2 = 10;">
+  <head>
+    <meta charset="utf-8">
+    <title>Curso Angular JS</title>
+    <script src="js/angular.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+    <h1 ng-bind="valor1"></h1> <!-- o ng-bind pode ser resumido usando somente 'chave duplas'. Ex: {{valor1}}-->
+    <h2>{{valor2}}</h2>
+
+    <input type="text" ng-model="valor1">
+    <input type="number" ng-model="valor2">
+  </body>
+</html>

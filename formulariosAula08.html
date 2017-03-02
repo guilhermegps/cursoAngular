@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Curso de AngularJS</title>
+  </head>
+  <body>
+    <div ng-controller="controllerAula08">
+      <form name="frm" novalidate ng-submit="salvarPessoa(pessoa)">
+        <p>
+          Nome: <input name="txtNome" type="text" ng-model="pessoa.nome" required>
+        </p>
+
+        <div ng-show="frm.$submitted || frm.txtNome.$touched">
+          <div ng-show="frm.txtNome.$error.required">
+            O campo nome deve ser preenchido.
+          </div>
+        </div>
+
+        <p>
+          E-mail: <input type="email" ng-model="pessoa.email" required>
+        </p>
+
+        <p>
+          Sexo: <input type="radio" value="m" ng-model="pessoa.sexo"> Masculino
+                <input type="radio" value="f" ng-model="pessoa.sexo"> Feminino
+        </p>
+
+        <p>
+          Estado:
+          <select ng-model="pessoa.estado">
+            <option ng-repeat="estado in estados" value="{{estado}}">{{estado}}</option>
+          </select>
+        </p>
+
+        <p>
+          <input type="submit" value="Salvar" ng-disabled="frm.$invalid">
+        </p>
+
+        <pre>
+          {{pessoa | json}}
+        </pre>
+
+        <pre>
+          {{pessoas | json}}
+        </pre>
+      </form>
+    </div>
+
+    <script src="js/angular.min.js" charset="utf-8"></script>
+    <script src="js/app.model.js" charset="utf-8"></script>
+
+    <!-- CONTROLLERS -->
+    <script src="js/controllerAula08.js" charset="utf-8"></script>
+  </body>
+</html>

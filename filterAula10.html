@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Curso de AngularJS</title>
+  </head>
+  <body>
+
+    <div ng-controller="ControllerAula10">
+      <h1>Controller da Aula10</h1>
+
+      {{'Guilherme de Paiva' | lowercase}}
+
+      <br>
+
+      {{pessoa | json}}
+
+      <br>
+
+      {{'Guilherme' | retornaOi}}
+    </div>
+
+    <script src="js/angular.min.js" charset="utf-8"></script>
+    <script src="js/app.model.js" charset="utf-8"></script>
+    <script src="js/filterAula10.js" charset="utf-8"></script>
+
+    <!-- CONTROLLERS -->
+    <script src="js/controllerAula10.js" charset="utf-8"></script>
+  </body>
+</html>

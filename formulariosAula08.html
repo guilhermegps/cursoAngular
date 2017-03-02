@@ -18,8 +18,17 @@
         </div>
 
         <p>
-          E-mail: <input type="email" ng-model="pessoa.email" required>
+          E-mail: <input name="email" type="email" ng-model="pessoa.email" required>
         </p>
+
+        <div ng-show="frm.$submitted || frm.email.$touched">
+          <div ng-show="frm.email.$error.required">
+            O campo e-mail deve ser preenchido.
+          </div>
+            <div ng-show="frm.email.$error.email">
+              O campo e-mail deve conter um e-mail válido.
+            </div>
+        </div>
 
         <p>
           Sexo: <input type="radio" value="m" ng-model="pessoa.sexo"> Masculino

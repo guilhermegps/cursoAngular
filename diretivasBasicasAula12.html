@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <meta charset="utf-8">
+    <title>Curso de AngularJS</title>
+    <style media="screen">
+      [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+        display: none !important;
+      }
+
+      .classNgClass {
+        font-size: 50px;
+        color: red;
+      }
+    </style>
+    <script src="js/angular/angular.min.js" charset="utf-8"></script>
+  </head>
+  <body>
+
+    <div ng-controller="ControllerAula12">
+      <h1>ngShow e ngHide</h1>
+
+      <div ng-show="mostrar">Mostrar true</div>
+      <div ng-hide="mostrar">Mostrar false</div>
+      <div ng-show="!mostrar">Mostrar !true</div>
+
+      <input type="checkbox" ng-model="mostrar"> Mostrar?
+
+      <h1>Elemento A</h1>
+      <a href="">Abrir página</a>
+
+      <h1>ngBindHtml</h1>
+      {{variavelHTML}}
+      <p ng-bind-html="variavelHTML"></p>
+
+      <h1>ngClass</h1>
+
+      <button type="button" ng-click="minhaClass='classNgClass'">Aplica</button>
+      <button type="button" ng-click="minhaClass=''">Reverte</button>
+
+      <div ng-class="minhaClass">Div para testes</div>
+
+      <h1>ngCloak</h1>
+      <p>Previne que variáveis sejam exibidas no browser</p>
+      <p ng-cloak>{{variavelCloak}}</p>
+
+      <h1>ngSrc</h1>
+      <img src="imgs/{{minhaFoto}}" alt="">
+      <button type="button" ng-click="minhaFoto='img1.jpg'">Foto1</button>
+      <button type="button" ng-click="minhaFoto='img2.jpg'">Foto2</button>
+    </div>
+
+    <script src="js/angular/angular-sanitize.min.js" charset="utf-8"></script>
+
+    <!-- CONTROLLERS -->
+    <script src="js/controllerAula12.js" charset="utf-8"></script>
+  </body>
+</html>
